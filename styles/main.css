@@ -5,9 +5,9 @@
 body {
   background-color: rgb(25, 25, 25);
   color: white;
-  display: grid; /* Changed to grid layout */
-  grid-template-rows: auto 1fr; /* Automatically size header and grid area for sections */
-  grid-template-columns: 100%; /* One column for the header */
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 100%;
   justify-items: center;
   align-items: center;
   height: 100vh;
@@ -90,14 +90,13 @@ a:after {
   color: #f9f9f9;
 }
 
-/* Grid layout for sections */
 .main-content {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 1:2 ratio */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 20px;
-  width: 80%; /* Limit width */
-  margin-top: 30px; /* Add space after header */
+  width: 80%;
+  margin-top: 30px;
 }
 
 section {
