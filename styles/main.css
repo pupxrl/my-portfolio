@@ -12,7 +12,7 @@ html {
 
 body {
   background-color: rgb(25, 25, 25);
-  color: white;
+  color: rgb(219, 219, 219);
   display: grid;
   grid-template-rows: auto 1fr;
   justify-items: center;

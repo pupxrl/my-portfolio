@@ -1,6 +1,6 @@
 body {
     background-color: rgb(25, 25, 25);
-    color: white;
+    color: rgb(224, 224, 224);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,8 +80,8 @@ ul li {
 
 .bot-link {
     text-decoration: none;
-    color: white;
-    background: #653eb4;
+    color: rgb(212, 212, 212);
+    background: #2d2d2d;
     padding: 10px 15px;
     border-radius: 8px;
     font-weight: 600;
@@ -90,13 +90,9 @@ ul li {
 }
 
 .bot-link:hover {
-    background: #8645ff;
+    background: #757575;
 }
 
 a {
     color: rgb(205, 205, 205);
-}
-
-a:hover {
-    color: grey;
 }

@@ -65,7 +65,7 @@ ul li {
 }
 
 a {
-  color: #f9f9f9;
+  color: #e1e1e1;
   text-decoration: none;
   font-weight: 400;
 }
@@ -110,7 +110,7 @@ section:hover {
 section h2 {
   font-family: "Pixelify Sans", serif;
   margin-bottom: 10px;
-  color: white;
+  color: rgb(229, 229, 229);
 }
 
 section p {
