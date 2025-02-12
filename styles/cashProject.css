@@ -1,0 +1,102 @@
+body {
+    background-color: rgb(25, 25, 25);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 1000px;
+}
+
+#cashpfp {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+#span-highlight {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(186, 106, 255);
+    background-color: rgba(99, 71, 141, 0.5);
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid rgb(203, 91, 255);
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #cacaca;
+    margin-bottom: 15px;
+}
+
+.info-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+p {
+    color: #b3b3b3;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+ul li {
+    color: grey;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.bottom-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.bot-link {
+    text-decoration: none;
+    color: white;
+    background: #653eb4;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.bot-link:hover {
+    background: #8645ff;
+}
+
+a {
+    color: rgb(205, 205, 205);
+}
+
+a:hover {
+    color: grey;
+}
