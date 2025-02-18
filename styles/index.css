@@ -1,4 +1,17 @@
+.bubble {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: auto;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
 header {
+  user-select: none;
+  -webkit-user-select: none;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -182,10 +195,25 @@ section p {
 }
 
 #cash {
-  background-image: url("../images/cash-background.jpeg");
+  box-shadow: inset 50px 0 200px rgba(0, 0, 0, 0.3),
+  inset -50px 0 200px rgba(0, 0, 0, 0.3),
+  inset 0 50px 200px rgba(0, 0, 0, 0.3),
+  inset 0 -50px 200px rgba(0, 0, 0, 0.3);
+  background-color: rgb(225, 225, 225);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+#cashHeader {
+  text-shadow: 
+  0px 0px 5px rgba(0, 0, 0, 0.2),
+  5px 5px 10px rgba(0, 0, 0, 0.2),
+  10px 10px 10px rgba(0, 0, 0, 0.4),
+  15px 15px 10px rgba(0, 0, 0, 0.6),
+  20px 20px 10px rgba(0, 0, 0, 0.8),
+  25px 25px 10px rgba(0, 0, 0, 1);
+  margin-bottom: 30px;
 }
 
 .project-card {

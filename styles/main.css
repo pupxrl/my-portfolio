@@ -20,6 +20,7 @@ body {
   height: 100vh;
   margin: 0;
   font-family: "Pixelify Sans", serif;
+  overflow-x: hidden;
 }
 
 #span-note {

@@ -28,6 +28,10 @@ header {
     margin-bottom: 15px;
 }
 
+#linkIconProjPage {
+    height: 12px;
+}
+
 h2 {
     font-size: 28px;
     margin-bottom: 10px;
@@ -74,11 +78,11 @@ ul li {
 
 .bot-link {
     text-decoration: none;
-    color: rgb(212, 212, 212);
+    color: rgb(255, 255, 255);
     background: #2d2d2d;
     padding: 10px 15px;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 100;
     font-size: 16px;
     transition: background 0.3s ease-in-out;
 }
