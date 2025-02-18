@@ -195,11 +195,7 @@ section p {
 }
 
 #cash {
-  box-shadow: inset 50px 0 200px rgba(0, 0, 0, 0.3),
-  inset -50px 0 200px rgba(0, 0, 0, 0.3),
-  inset 0 50px 200px rgba(0, 0, 0, 0.3),
-  inset 0 -50px 200px rgba(0, 0, 0, 0.3);
-  background-color: rgb(225, 225, 225);
+  background-color: rgba(65, 65, 65, 0.464);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -243,7 +239,7 @@ section p {
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 10px rgba(220, 220, 220, 0.3);
+  box-shadow: 0 0 10px rgba(214, 214, 214, 0.762);
 }
 
 #linkIconProject {
