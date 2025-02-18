@@ -21,15 +21,15 @@ header {
   width: 100%;
 }
 
-header nav {
+header aside {
   margin-bottom: 20px;
 }
 
-header nav ul li {
+header aside ul li {
   font-size: 14px;
 }
 
-#linkIconNav {
+#linkIconAside {
   height: 11px;
   padding-top: 2px;
 }
