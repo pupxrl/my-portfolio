@@ -194,16 +194,9 @@ section p {
   height: auto;
 }
 
-#cash {
-  background-color: rgba(65, 65, 65, 0.464);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .project-card {
   font-family: "Montserrat", sans-serif;
-  background-color: rgba(83, 83, 83, 0.2);
+  background-color: rgba(83, 83, 83, 0.1);
   padding: 20px;
   border-radius: 10px;
   text-align: left;
