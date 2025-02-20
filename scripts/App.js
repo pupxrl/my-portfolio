@@ -1,61 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const numBubbles = 6;
-    let score = localStorage.getItem("bubbleScore")
-      ? parseInt(localStorage.getItem("bubbleScore"))
-      : 0;
-    let bubbleColor = localStorage.getItem("bubbleColor") || "#FFFFFF";
-    let purchasedColors =
-      JSON.parse(localStorage.getItem("purchasedColors")) || [];
-  
-    function hexToRgb(hex) {
-      hex = hex.replace(/^#/, "");
-      let bigint = parseInt(hex, 16);
-      let r = (bigint >> 16) & 255;
-      let g = (bigint >> 8) & 255;
-      let b = bigint & 255;
-      return `${r}, ${g}, ${b}`;
-    }
-  
-    let colorOptions = [
+  const numBubbles = 6;
+  let score = localStorage.getItem("bubbleScore") ? parseInt(localStorage.getItem("bubbleScore")) : 0;
+  let bubbleColor = localStorage.getItem("bubbleColor") || "#FFFFFF";
+  let purchasedColors = JSON.parse(localStorage.getItem("purchasedColors")) || [];
+
+  let colorOptions = [
+      { name: "Default (White)", hex: "#FFFFFF", price: 0 },
       { name: "Red", hex: "#FF0000", price: 10 },
       { name: "Orange", hex: "#FFA500", price: 15 },
       { name: "Green", hex: "#00FF00", price: 20 },
       { name: "Blue", hex: "#0000FF", price: 25 },
-    ];
-  
-    let scoreDisplay;
-    if (score >= 1) {
-      scoreDisplay = document.createElement("div");
-      scoreDisplay.id = "scoreDisplay";
-      scoreDisplay.style.position = "absolute";
-      scoreDisplay.style.top = "20px";
-      scoreDisplay.style.left = "20px";
-      scoreDisplay.style.fontSize = "15px";
-      scoreDisplay.style.background = "rgba(62, 62, 62, 0.34)";
-      scoreDisplay.style.color = "rgba(255, 255, 255, 0.71)";
-      scoreDisplay.style.padding = "10px 15px";
-      scoreDisplay.style.fontFamily = "Montserrat, sans-serif";
-      scoreDisplay.style.borderRadius = "5px";
-      scoreDisplay.style.userSelect = "none";
-      document.body.appendChild(scoreDisplay);
-    }
-  
-    function updateScoreDisplay() {
-      if (scoreDisplay) {
-        scoreDisplay.textContent = `Score: ${score}`;
-      }
-    }
-  
-    function updateScore() {
+      { name: "Rainbow", hex: "rainbow", price: 200 }
+  ];
+
+  let scoreDisplay = document.createElement("div");
+  scoreDisplay.id = "scoreDisplay";
+  scoreDisplay.style.position = "absolute";
+  scoreDisplay.style.top = "20px";
+  scoreDisplay.style.left = "20px";
+  scoreDisplay.style.fontSize = "15px";
+  scoreDisplay.style.background = "rgba(62, 62, 62, 0.34)";
+  scoreDisplay.style.color = "rgba(255, 255, 255, 0.71)";
+  scoreDisplay.style.padding = "10px 15px";
+  scoreDisplay.style.fontFamily = "Montserrat, sans-serif";
+  scoreDisplay.style.borderRadius = "5px";
+  scoreDisplay.style.userSelect = "none";
+  document.body.appendChild(scoreDisplay);
+
+  function updateScoreDisplay() {
+      scoreDisplay.textContent = `Score: ${score}`;
+  }
+
+  function updateScore() {
       score++;
       localStorage.setItem("bubbleScore", score);
       updateScoreDisplay();
-    }
-  
-    function createBubble() {
+  }
+
+  function createBubble() {
       const bubble = document.createElement("div");
       bubble.classList.add("bubble");
-  
+
       const x = Math.random() * window.innerWidth;
       const y = Math.random() * (window.innerHeight * 2);
       bubble.style.left = `${x}px`;
@@ -63,111 +48,110 @@ document.addEventListener("DOMContentLoaded", () => {
       bubble.style.width = "30px";
       bubble.style.height = "30px";
       bubble.style.position = "absolute";
-      bubble.style.border = `1px solid rgba(${hexToRgb(bubbleColor)}, 0.5)`;
       bubble.style.borderRadius = "50%";
-      bubble.style.backdropFilter = "blur(2px)";
-      bubble.style.webkitBackdropFilter = "blur(2px)";
-  
+      bubble.style.backgroundColor = "transparent";
+
+      if (bubbleColor === "rainbow") {
+          bubble.style.animation = "rainbowOutline 2s linear infinite";
+      } else {
+          bubble.style.border = `2px solid ${bubbleColor}`;
+      }
+
       bubble.addEventListener("click", () => {
-        const angle = Math.random() * 360;
-        const distance = Math.max(window.innerWidth, window.innerHeight);
-  
-        const deltaX = Math.cos(angle) * distance;
-        const deltaY = Math.sin(angle) * distance;
-  
-        bubble.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-        bubble.style.opacity = "0";
-  
-        updateScore();
-  
-        setTimeout(() => {
-          bubble.remove();
-          createBubble();
-        }, 1000);
+          const angle = Math.random() * 360;
+          const distance = Math.max(window.innerWidth, window.innerHeight);
+
+          const deltaX = Math.cos(angle) * distance;
+          const deltaY = Math.sin(angle) * distance;
+
+          bubble.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+          bubble.style.opacity = "0";
+
+          updateScore();
+
+          setTimeout(() => {
+              bubble.remove();
+              createBubble();
+          }, 1000);
       });
-  
+
       document.body.appendChild(bubble);
-    }
-  
-    for (let i = 0; i < numBubbles; i++) {
+  }
+
+  for (let i = 0; i < numBubbles; i++) {
       createBubble();
-    }
-  
-    updateScoreDisplay();
-  
-    const colorMenu = document.createElement("div");
-    colorMenu.style.position = "absolute";
-    colorMenu.style.top = "70px";
-    colorMenu.style.left = "20px";
-    colorMenu.style.padding = "10px 15px";
-    colorMenu.style.borderRadius = "5px";
-    colorMenu.style.display = "none";
-    colorMenu.style.fontFamily = "Montserrat, sans-serif";
-    colorMenu.style.color = "#fff";
-    colorMenu.style.fontSize = "14px";
-    colorMenu.style.zIndex = 1000;
-    colorMenu.style.background = "rgba(62, 62, 62, 0.34)";
-    colorMenu.style.textAlign = "left";
-    colorMenu.style.width = "200px";
-  
-    const title = document.createElement("div");
-    title.textContent = "Color Shop";
-    title.style.fontSize = "16px";
-    title.style.fontWeight = "bold";
-    title.style.marginBottom = "10px";
-    colorMenu.appendChild(title);
-  
-    colorOptions.forEach(({ name, hex, price }) => {
-      const colorButton = document.createElement("button");
-      colorButton.textContent = purchasedColors.includes(hex)
-        ? `${name} (Click to equip)`
-        : `${name} (Cost: ${price} points)`;
-  
-      colorButton.style.marginBottom = "10px";
-      colorButton.style.padding = "5px 10px";
-      colorButton.style.backgroundColor = hex;
-      colorButton.style.border = "none";
-      colorButton.style.cursor = "pointer";
-      colorButton.style.borderRadius = "5px";
-      colorButton.style.color = "#fff";
-      colorButton.style.width = "100%";
-  
-      colorButton.addEventListener("click", () => {
-        if (!purchasedColors.includes(hex)) {
-          if (score >= price) {
-            score -= price;
-            purchasedColors.push(hex);
-            bubbleColor = hex;
-            localStorage.setItem("bubbleScore", score);
-            localStorage.setItem("bubbleColor", bubbleColor);
-            localStorage.setItem("purchasedColors", JSON.stringify(purchasedColors));
-            updateScoreDisplay();
-  
-            colorButton.textContent = `${name} (Click to equip)`;
-            colorMenu.style.display = "none";
+  }
+
+  updateScoreDisplay();
+
+  const colorMenu = document.createElement("div");
+  colorMenu.style.position = "absolute";
+  colorMenu.style.top = "70px";
+  colorMenu.style.left = "20px";
+  colorMenu.style.padding = "10px 15px";
+  colorMenu.style.borderRadius = "5px";
+  colorMenu.style.display = "none";
+  colorMenu.style.fontFamily = "Montserrat, sans-serif";
+  colorMenu.style.color = "#fff";
+  colorMenu.style.fontSize = "14px";
+  colorMenu.style.zIndex = 1000;
+  colorMenu.style.background = "rgba(62, 62, 62, 0.34)";
+  colorMenu.style.textAlign = "left";
+  colorMenu.style.width = "200px";
+
+  function renderColorOptions() {
+      colorMenu.innerHTML = "";
+
+      colorOptions.forEach(({ name, hex, price }) => {
+          const colorButton = document.createElement("button");
+          colorButton.style.marginBottom = "10px";
+          colorButton.style.padding = "5px 10px";
+          colorButton.style.backgroundColor = "#333";
+          colorButton.style.border = "none";
+          colorButton.style.cursor = "pointer";
+          colorButton.style.borderRadius = "5px";
+          colorButton.style.color = "#fff";
+          colorButton.style.width = "100%";
+
+          if (hex === "#FFFFFF" || purchasedColors.includes(hex)) {
+              colorButton.textContent = bubbleColor === hex ? `${name} (Equipped)` : `${name} (Click to equip)`;
           } else {
-            showCustomAlert("Not enough points to buy this color.<br>");
+              colorButton.textContent = `${name} (Cost: ${price} points)`;
           }
-        } else {
-          bubbleColor = hex;
-          localStorage.setItem("bubbleColor", bubbleColor);
-          showColorEquippedPopup(name);
-          colorMenu.style.display = "none";
-        }
+
+          colorButton.addEventListener("click", () => {
+              if (hex === "#FFFFFF" || purchasedColors.includes(hex)) {
+                  bubbleColor = hex;
+                  localStorage.setItem("bubbleColor", bubbleColor);
+              } else if (score >= price) {
+                  score -= price;
+                  purchasedColors.push(hex);
+                  bubbleColor = hex;
+                  localStorage.setItem("bubbleScore", score);
+                  localStorage.setItem("bubbleColor", bubbleColor);
+                  localStorage.setItem("purchasedColors", JSON.stringify(purchasedColors));
+                  updateScoreDisplay();
+              } else {
+                  showCustomAlert("Not enough points to buy this color.");
+                  return;
+              }
+              renderColorOptions();
+          });
+
+          colorMenu.appendChild(colorButton);
       });
-  
-      colorMenu.appendChild(colorButton);
-    });
-  
-    document.body.appendChild(colorMenu);
-  
-    let menuVisible = false;
-    scoreDisplay.addEventListener("click", () => {
+  }
+
+  document.body.appendChild(colorMenu);
+
+  let menuVisible = false;
+  scoreDisplay.addEventListener("click", () => {
       menuVisible = !menuVisible;
       colorMenu.style.display = menuVisible ? "block" : "none";
-    });
-  
-    function showCustomAlert(message) {
+      renderColorOptions();
+  });
+
+  function showCustomAlert(message) {
       const alertBox = document.createElement("div");
       alertBox.style.position = "fixed";
       alertBox.style.top = "50%";
@@ -181,9 +165,9 @@ document.addEventListener("DOMContentLoaded", () => {
       alertBox.style.fontFamily = "Montserrat, sans-serif";
       alertBox.style.zIndex = "10";
       alertBox.style.textAlign = "center";
-  
-      alertBox.innerHTML = message;
-  
+
+      alertBox.textContent = message;
+
       const closeButton = document.createElement("button");
       closeButton.textContent = "Close";
       closeButton.style.marginTop = "15px";
@@ -193,19 +177,25 @@ document.addEventListener("DOMContentLoaded", () => {
       closeButton.style.cursor = "pointer";
       closeButton.style.borderRadius = "5px";
       closeButton.style.color = "#fff";
-      closeButton.style.display = "block";
-      closeButton.style.margin = "10px auto";
-  
+
       closeButton.addEventListener("click", () => {
-        alertBox.remove();
+          alertBox.remove();
       });
-  
+
       alertBox.appendChild(closeButton);
       document.body.appendChild(alertBox);
-    }
-  
-    function showColorEquippedPopup(color) {
-      showCustomAlert(`${color} color equipped!`);
-    }
-  });
-  
+  }
+
+  const style = document.createElement("style");
+  style.innerHTML = `
+      @keyframes rainbowOutline {
+          0% { border-color: red; }
+          20% { border-color: orange; }
+          40% { border-color: yellow; }
+          60% { border-color: green; }
+          80% { border-color: blue; }
+          100% { border-color: violet; }
+      }
+  `;
+  document.head.appendChild(style);
+});
