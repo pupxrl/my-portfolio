@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jude Piper - A skilled web developer specializing in JavaScript, Node.js, and the MERN stack. Explore my portfolio and projects.">
+    <meta name="keywords" content="Jude Piper, Web Developer, JavaScript, Node.js, MERN Stack, Full Stack Developer, Portfolio">
+    <meta name="author" content="Jude Piper">
     <meta property="og:title" content="Jude P. Portfolio" />
+    <meta property="og:description" content="Explore the portfolio of Jude Piper, a full-stack web developer with expertise in JavaScript, Node.js, and modern frameworks." />
     <meta property="og:url" content="https://pupxrl.github.io/my-portfolio" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://pupxrl.github.io/my-portfolio" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/index.css" />
     <link
@@ -12,43 +18,51 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="images/white.ico" type="image/x-icon" />
-    <title>Jude Piper</title>
+    <title>Jude Piper - Web Developer</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jude Piper",
+        "jobTitle": "Web Developer",
+        "url": "https://pupxrl.github.io/my-portfolio",
+        "sameAs": [
+          "https://github.com/pupxrl",
+          "https://www.linkedin.com/in/jude-piper-a18045350/"
+        ]
+      }
+    </script>
   </head>
   <body>
 
     <header>
       <h1>Jude Piper</h1>
-
       <p>Web Developer</p>
 
       <aside>
         <ul>
           <li>
-            <a href="https://github.com/pupxrl" target="_blank"
-              >Github
-              <img src="images/linkIcon.png" alt="linkIcon" id="linkIconAside"
-            /></a>
+            <a href="https://github.com/pupxrl" target="_blank">GitHub
+              <img src="images/linkIcon.png" alt="GitHub Link" id="linkIconAside" />
+            </a>
           </li>
           <li>
-            <a
-              href="https://www.linkedin.com/in/jude-piper-a18045350/"
-              target="_blank"
-              >LinkedIn
-              <img src="images/linkIcon.png" alt="linkIcon" id="linkIconAside"
-            /></a>
+            <a href="https://www.linkedin.com/in/jude-piper-a18045350/" target="_blank">LinkedIn
+              <img src="images/linkIcon.png" alt="LinkedIn Link" id="linkIconAside" />
+            </a>
           </li>
         </ul>
       </aside>
 
       <div class="scroll-popup" id="scroll-aboutme">
         <h3>Scroll for about me</h3>
-        <img src="images/arrow.png" alt="arrow" id="arrow" />
+        <img src="images/arrow.png" alt="Scroll Arrow" id="arrow" />
       </div>
     </header>
 
     <div class="main-content">
       <section class="summary">
-        <h2>Summary</h2>
+        <h2>About Me</h2>
         <p>
           I am a dedicated web developer with over five years of hands-on
           experience in JavaScript and Node.js. My expertise extends to
@@ -57,8 +71,7 @@
           Imperial College London in collaboration with HyperionDev, I have
           built a solid foundation in modern web frameworks and development
           methodologies.
-          <br />
-          <br />
+          <br /><br />
           I am passionate about problem-solving and enjoy working on innovative
           projects. My interests lie in leveraging technology to create
           impactful digital experiences, whether through AI-driven applications
@@ -76,12 +89,6 @@
             intensive program provided a comprehensive education in modern web
             development, equipping me with a deep understanding of key
             technologies including HTML, CSS, JavaScript, and Node.js.
-            <br /><br />
-            The bootcamp emphasized hands-on learning, allowing me to build
-            complex, full-stack applications while honing my problem-solving and
-            software development skills. This experience has strengthened my
-            ability to work with the MERN stack, and has prepared me to tackle
-            real-world challenges in the ever-evolving tech industry.
           </p>
         </section>
 
@@ -109,7 +116,7 @@
           <h2>Technologies</h2>
           <ul>
             <li>JavaScript</li>
-            <li>Mongo</li>
+            <li>MongoDB</li>
             <li>React</li>
             <li>Express</li>
             <li>Docker</li>
@@ -124,7 +131,7 @@
 
     <div class="scroll-popup" id="secondScrollPopup">
       <h3>Scroll for projects</h3>
-      <img src="images/arrow.png" alt="arrow" id="arrow" />
+      <img src="images/arrow.png" alt="Scroll Arrow" id="arrow" />
     </div>
 
     <article class="works-article">
@@ -136,13 +143,14 @@
           <span id="span-note">September 2021 - Present</span>
           <br />
           <br />
-          <a href="pages/cashProject.html" target="_blank"
-            >View project
-            <img src="images/linkIcon.png" alt="linkIcon" id="linkIconProject"
-          /></a>
+          <a href="pages/cashProject.html" target="_blank">
+            View project
+            <img src="images/linkIcon.png" alt="Project Link Icon" id="linkIconProject" />
+          </a>
         </div>
       </div>
     </article>
+
   </body>
 
   <script src="scripts/App.js"></script>
