@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const numBubbles = 6;
   let score = localStorage.getItem("bubbleScore") ? parseInt(localStorage.getItem("bubbleScore")) : 0;
-  let bubbleColor = localStorage.getItem("bubbleColor") || "#FFFFFF";
+  let bubbleColor = localStorage.getItem("bubbleColor") || "#8EFFFF";
   let purchasedColors = JSON.parse(localStorage.getItem("purchasedColors")) || [];
 
   let colorOptions = [
-      { name: "Default (White)", hex: "#FFFFFF", price: 0 },
+      { name: "Default (cyan)", hex: "#8EFFFF", price: 0 },
       { name: "Red", hex: "#FF0000", price: 10 },
       { name: "Orange", hex: "#FFA500", price: 15 },
       { name: "Green", hex: "#00FF00", price: 20 },
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scoreDisplay.style.left = "20px";
   scoreDisplay.style.fontSize = "15px";
   scoreDisplay.style.background = "rgba(62, 62, 62, 0.34)";
-  scoreDisplay.style.color = "rgba(255, 255, 255, 0.71)";
+  scoreDisplay.style.color = "color: var(--text-color);";
   scoreDisplay.style.padding = "10px 15px";
   scoreDisplay.style.fontFamily = "Montserrat, sans-serif";
   scoreDisplay.style.borderRadius = "5px";

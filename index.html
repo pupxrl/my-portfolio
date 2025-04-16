@@ -3,15 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Jude Piper - A skilled web developer specializing in JavaScript, Node.js, and the MERN stack. Explore my portfolio and projects.">
-    <meta name="keywords" content="Jude Piper, Web Developer, JavaScript, Node.js, MERN Stack, Full Stack Developer, Portfolio">
-    <meta name="author" content="Jude Piper">
+    <meta
+      name="description"
+      content="Jude Piper - A skilled web developer specializing in JavaScript, Node.js, and the MERN stack. Explore my portfolio and projects."
+    />
+    <meta
+      name="keywords"
+      content="Jude Piper, Web Developer, JavaScript, Node.js, MERN Stack, Full Stack Developer, Portfolio"
+    />
+    <meta name="author" content="Jude Piper" />
     <meta property="og:title" content="Jude P. Portfolio" />
-    <meta property="og:description" content="Explore the portfolio of Jude Piper, a full-stack web developer with expertise in JavaScript, Node.js, and modern frameworks." />
+    <meta
+      property="og:description"
+      content="Explore the portfolio of Jude Piper, a full-stack web developer with expertise in JavaScript, Node.js, and modern frameworks."
+    />
     <meta property="og:url" content="https://pupxrl.github.io/my-portfolio" />
     <meta property="og:type" content="website" />
     <link rel="canonical" href="https://pupxrl.github.io/my-portfolio" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link id="theme-style" rel="stylesheet" href="styles/light.css" />
+
     <link rel="stylesheet" href="styles/index.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&family=Pixelify+Sans:wght@400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=VT323&family=Rowdies:wght@300;400;700&display=swap"
@@ -34,7 +45,7 @@
     </script>
   </head>
   <body>
-
+    <button id="theme-toggle">Toggle Dark Mode</button>
     <header>
       <h1>Jude Piper</h1>
       <p>Web Developer</p>
@@ -42,21 +53,22 @@
       <aside>
         <ul>
           <li>
-            <a href="https://github.com/pupxrl" target="_blank">GitHub
-              <img src="images/linkIcon.png" alt="GitHub Link" id="linkIconAside" />
+            <a href="https://github.com/pupxrl" target="_blank"
+              >GitHub
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/jude-piper-a18045350/" target="_blank">LinkedIn
-              <img src="images/linkIcon.png" alt="LinkedIn Link" id="linkIconAside" />
+            <a
+              href="https://www.linkedin.com/in/jude-piper-a18045350/"
+              target="_blank"
+              >LinkedIn
             </a>
           </li>
         </ul>
       </aside>
 
       <div class="scroll-popup" id="scroll-aboutme">
-        <h3>Scroll for about me</h3>
-        <img src="images/arrow.png" alt="Scroll Arrow" id="arrow" />
+        <h3>Scroll for about me ↓</h3>
       </div>
     </header>
 
@@ -130,8 +142,7 @@
     </div>
 
     <div class="scroll-popup" id="secondScrollPopup">
-      <h3>Scroll for projects</h3>
-      <img src="images/arrow.png" alt="Scroll Arrow" id="arrow" />
+      <h3>Scroll for projects ↓</h3>
     </div>
 
     <article class="works-article">
@@ -145,13 +156,12 @@
           <br />
           <a href="pages/cashProject.html" target="_blank">
             View project
-            <img src="images/linkIcon.png" alt="Project Link Icon" id="linkIconProject" />
           </a>
         </div>
       </div>
     </article>
-
   </body>
 
   <script src="scripts/App.js"></script>
+  <script src="scripts/light.js"></script>
 </html>
