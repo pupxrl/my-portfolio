@@ -7,8 +7,8 @@ try {
   }
 
   const themes = {
-    light: "/styles/light.css",
-    dark: "/styles/dark.css",
+    light: "../styles/light.css",
+    dark: "../styles/dark.css",
   };
 
   let savedTheme = localStorage.getItem("theme");
