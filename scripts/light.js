@@ -1,11 +1,16 @@
 const themeToggle = document.getElementById("theme-toggle");
 const themeStyle = document.getElementById("theme-style");
 
-let currentTheme = localStorage.getItem("theme") || "light";
-themeStyle.href = `/styles/${currentTheme}.css`;
+const themes = {
+  light: "/styles/light.css",
+  dark: "/styles/dark.css",
+};
+
+const savedTheme = localStorage.getItem("theme") || "light";
+themeStyle.href = themes[savedTheme];
 
 themeToggle.addEventListener("click", () => {
-  currentTheme = currentTheme === "light" ? "dark" : "light";
-  themeStyle.href = `/styles/${currentTheme}.css`;
-  localStorage.setItem("theme", currentTheme);
+  const newTheme = themeStyle.href.includes("light.css") ? "dark" : "light";
+  themeStyle.href = themes[newTheme];
+  localStorage.setItem("theme", newTheme);
 });
