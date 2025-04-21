@@ -1,17 +1,11 @@
 const themeToggle = document.getElementById("theme-toggle");
 const themeStyle = document.getElementById("theme-style");
 
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  themeStyle.href = `../styles/${savedTheme}.css`;
-}
+let currentTheme = localStorage.getItem("theme") || "light";
+themeStyle.href = `../styles/${currentTheme}.css`;
 
 themeToggle.addEventListener("click", () => {
-  if (themeStyle.href.includes("light.css")) {
-    themeStyle.href = "../styles/dark.css";
-    localStorage.setItem("theme", "dark");
-  } else {
-    themeStyle.href = "../styles/light.css";
-    localStorage.setItem("theme", "light");
-  }
+  currentTheme = currentTheme === "light" ? "dark" : "light";
+  themeStyle.href = `../styles/${currentTheme}.css`;
+  localStorage.setItem("theme", currentTheme);
 });
