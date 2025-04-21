@@ -235,7 +235,8 @@ section p {
 }
 
 .project-card a:hover {
-  background-color: rgb(87, 87, 87);
+  background-color: var(--hover-color);
+  color: var(--polar-color);
 }
 
 .project-card:hover {

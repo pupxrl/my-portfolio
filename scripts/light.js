@@ -5,11 +5,14 @@ const themes = {
     '--bg-color': '#ffffff',
     '--text-color': '#000000',
     '--link-color': '#007bff',
+    '--hover-color': '#cce5ff'
   },
   dark: {
     '--bg-color': '#121212',
     '--text-color': '#ffffff',
     '--link-color': '#66b3ff',
+    '--hover-color': '#ffccf5',
+    '--polar-color': '#000000'
   },
 };
 

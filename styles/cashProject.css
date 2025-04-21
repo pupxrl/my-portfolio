@@ -11,7 +11,7 @@ header {
     font-size: 14px;
     font-weight: 600;
     color: rgb(84, 135, 255);
-    background-color: rgba(71, 75, 141, 0.5);
+    background-color: rgba(151, 154, 204, 0.651);
     padding: 8px 12px;
     border-radius: 10px;
     border: 3px solid rgb(91, 113, 255);
@@ -64,8 +64,8 @@ ul li {
 
 .bot-link {
     text-decoration: none;
-    color: rgb(255, 255, 255);
-    background: #2d2d2d;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     padding: 10px 15px;
     border-radius: 8px;
     font-weight: 100;
@@ -83,5 +83,5 @@ a {
 }
 
 a:hover {
-    color: rgb(255, 194, 247);
+    color: var(--hover-color);
 }
