@@ -7,7 +7,7 @@ html {
 }
 
 ::selection {
-  background-color: #d4acff;
+  background-color: #b7d5ff;
 }
 
 body {
@@ -19,7 +19,6 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: "Pixelify Sans", serif;
   overflow-x: hidden;
 }
 

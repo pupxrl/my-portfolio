@@ -1,8 +1,5 @@
-body {
-    font-family: "Montserrat", sans-serif;
-}
-
 header {
+    font-family: "Montserrat", sans-serif;
     padding: 30px;
     border-radius: 15px;
     text-align: center;
@@ -13,11 +10,11 @@ header {
     display: inline-block;
     font-size: 14px;
     font-weight: 600;
-    color: rgb(186, 106, 255);
-    background-color: rgba(99, 71, 141, 0.5);
+    color: rgb(84, 135, 255);
+    background-color: rgba(71, 75, 141, 0.5);
     padding: 8px 12px;
     border-radius: 10px;
-    border: 1px solid rgb(203, 91, 255);
+    border: 3px solid rgb(91, 113, 255);
     margin-bottom: 15px;
 }
 
@@ -81,9 +78,14 @@ ul li {
 }
 
 .bot-link:hover {
-    background: #757575;
+    background: #5b5b5b;
+    color: white;
 }
 
 a {
     color: rgb(205, 205, 205);
+}
+
+a:hover {
+    color: rgb(255, 194, 247);
 }

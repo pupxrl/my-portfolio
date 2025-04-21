@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    font-size: 20px;
+    width: 300px;
+    font-family: "Comfortaa", sans-serif;
+    text-decoration: none;
+}
+
+img {
+    position: absolute;
+    opacity: calc(30%);
+    z-index: -1;
+}
