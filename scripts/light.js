@@ -2,8 +2,8 @@ const themeToggle = document.getElementById("theme-toggle");
 const themeStyle = document.getElementById("theme-style");
 
 const themes = {
-  light: "/styles/light.css",
-  dark: "/styles/dark.css",
+  light: "styles/light.css",
+  dark: "styles/dark.css",
 };
 
 let savedTheme = localStorage.getItem("theme") || "light";
