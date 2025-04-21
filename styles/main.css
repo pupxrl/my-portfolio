@@ -11,8 +11,8 @@ html {
 }
 
 body {
-  background-color: rgb(15, 15, 15);
-  color: rgb(219, 219, 219);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   display: grid;
   grid-template-rows: auto 1fr;
   justify-items: center;
