@@ -30,8 +30,9 @@
       href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/styles/popup.css" />
     <link rel="shortcut icon" href="images/white.ico" type="image/x-icon" />
-    <title>Jude Piper - Web Developer</title>
+    <title>Jude Piper</title>
   </head>
   <body>
     <a class="greg-game-popup" href="./pages/greg.html"
@@ -46,6 +47,9 @@
         <ul>
           <li>
             <a href="https://github.com/pupxrl" target="_blank">GitHub </a>
+          </li>
+          <li>
+            <a href="#" onclick="togglePopup()">Contact Me</a>
           </li>
           <li>
             <a
@@ -148,7 +152,25 @@
         </div>
       </div>
     </article>
+
+    <div class="popup-overlay" id="popup">
+      <div class="popup-box">
+        <button class="close-btn" onclick="togglePopup()">×</button>
+        <form action="https://formspree.io/f/xzzrzppp" method="POST">
+          <label>
+            Your email:
+            <input type="email" name="email" />
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
   </body>
 
   <script src="scripts/light.js"></script>
+  <script src="scripts/App.js"></script>
 </html>
